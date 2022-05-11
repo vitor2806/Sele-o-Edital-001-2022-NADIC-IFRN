@@ -11,7 +11,7 @@ export default function Poll(props) {
             <HiChartPie fontSize={46} color={"orange"} />
           </div>
           <div className={styles.poll_desc}>
-            <Link className={styles.link} href={""}>
+            <Link className={styles.link} href={`poll/${props.id}`}>
               <a className="text-white">{props.name}</a>
             </Link>
             <p className="m-0 text-white opacity-75">

@@ -3,16 +3,18 @@ import styles from "../styles/Home.module.css";
 import Footer from "../components/Footer";
 import Poll from "../components/Poll";
 import Head from "next/head";
-import polls from "./db/polls";
+import Database from "./db/Poll";
 
 export default function Home() {
+  let polls = Database.get();
+
   return (
     <>
       <Head>
         <title>Votações</title>
       </Head>
       {/* Header */}
-      <Header option="Criar votação" href="/poll/create" />
+      <Header />
       <h2 className="text-center text-white">Votações ativas</h2>
       <p className="w-100 text-center text-white opacity-50">
         Para criar uma basta clicar no botão acima

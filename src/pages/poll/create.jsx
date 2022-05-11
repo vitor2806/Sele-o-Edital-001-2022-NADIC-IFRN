@@ -2,8 +2,8 @@ import Head from "next/head";
 import Footer from "../../components/Footer";
 import Header from "../../components/Header";
 import styles from "../../styles/Home.module.css";
-import { useState } from "react";
 import Option from "../../components/Option";
+import { useState } from "react";
 import { BsTrashFill } from "react-icons/bs";
 
 export default function Create() {
@@ -34,11 +34,11 @@ export default function Create() {
       <Header option="Votações" href="/" />
       <h2 className="text-center text-white">Crie sua votação</h2>
       <div
-        className={`${"container w-50 h-75 rounded border border-start-0 border-end-0 border-3 border-info mt-3 mb-4 p-5 "} ${
+        className={`${"container-fluid w-50  rounded border border-start-0 border-end-0 border-3 border-info mt-3 mb-4 p-5 "} ${
           styles.main
         }`}
       >
-        <form action="">
+        <form action="/api/form" method="post">
           {/* Poll title */}
           <div className="row gx-3 gy-3">
             <div className="col-8">
@@ -47,9 +47,10 @@ export default function Create() {
               </label>
               <input
                 type="text"
-                className="form-control bg-transparent border border-start-0 border-end-0 border-top-0 border-warning p-2 text-white"
-                id="title"
+                className="form-control bg-light bg-opacity-10 border-2 border-top-0 border-bottom-0 border-warning p-2 text-white"
+                id="name"
                 placeholder="Eleição para..."
+                name="name"
                 required
               />
               <div className="invalid-feedback">É necessário um título</div>
@@ -61,9 +62,10 @@ export default function Create() {
               </label>
               <input
                 type="date"
-                className="form-control bg-transparent border border-start-0 border-end-0 border-top-0 border-warning p-2 text-white"
+                className="form-control bg-light bg-opacity-10 border-2 border-top-0 border-bottom-0 border-warning p-2 text-white"
                 id="date"
                 placeholder=""
+                name="expire"
                 required
               />
               <div className="invalid-feedback">Zip code required.</div>
@@ -81,6 +83,7 @@ export default function Create() {
                       <div className="position-relative">
                         <Option key={index} number={index} />
                         <button
+                          key={`key${index}`}
                           className={styles.option_delete}
                           onClick={e => {
                             e.preventDefault();
@@ -99,7 +102,9 @@ export default function Create() {
               <button className="btn btn-warning mt-3" onClick={handleClick}>
                 Adicionar opção
               </button>
-              <button className="btn btn-warning mt-3">Concluir</button>
+              <button className="btn btn-warning mt-3" type="submit">
+                Concluir
+              </button>
             </div>
           </div>
         </form>

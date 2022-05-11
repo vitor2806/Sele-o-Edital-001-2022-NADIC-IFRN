@@ -1,0 +1,8 @@
+.link:hover,
+.link:focus {
+  color: #0dcaf0;
+}
+
+.link {
+  color: rgb(255, 255, 255);
+}

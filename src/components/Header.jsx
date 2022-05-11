@@ -1,5 +1,6 @@
 import { FaPoll } from "react-icons/fa";
 import Link from "next/link";
+import styles from "../styles/Header.module.css";
 
 export default function Header(props) {
   return (
@@ -12,9 +13,16 @@ export default function Header(props) {
             </a>
           </Link>
           <ul className="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+            <li className={styles.link}>
+              <Link className={styles.link} href="/poll/create">
+                <a className={`${"nav-link px-2"} ${styles.link}`}>
+                  Criar votação
+                </a>
+              </Link>
+            </li>
             <li>
-              <Link href={props.href}>
-                <a className="nav-link px-2 text-white">{props.option}</a>
+              <Link href="/" className={styles.link}>
+                <a className={`${"nav-link px-2 "} ${styles.link}`}>Votações</a>
               </Link>
             </li>
           </ul>
