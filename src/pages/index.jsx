@@ -3,6 +3,7 @@ import styles from "../styles/Home.module.css";
 import Footer from "../components/Footer";
 import Poll from "../components/Poll";
 import Head from "next/head";
+import polls from "./db/polls";
 
 export default function Home() {
   return (
@@ -23,10 +24,19 @@ export default function Home() {
           styles.main
         }`}
       >
-        <Poll date="10/03/2022" name="Reitor do Campus" votes={11123} />
-        <Poll date="10/03/2022" name="Reitor do Campus" votes={11123} />
-        <Poll date="10/03/2022" name="Reitor do Campus" votes={11123} />
-        <Poll date="10/03/2022" name="Reitor do Campus" votes={11123} />
+        {/* Pra cada elemento na array polls crie um componente Polls passando seu index e as demais propriedades */}
+        {polls.map((poll, index) => {
+          return (
+            <Poll
+              name={poll.name}
+              date={poll.created_at}
+              id={index}
+              expire={poll.expire}
+              votes={poll.votes}
+              key={index}
+            />
+          );
+        })}
       </div>
       <Footer />
     </>
