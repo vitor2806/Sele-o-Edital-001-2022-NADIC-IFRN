@@ -1,7 +1,7 @@
 import { FaPoll } from "react-icons/fa";
 import Link from "next/link";
 
-export default function Header() {
+export default function Header(props) {
   return (
     <header className="p-3 text-white">
       <div className="container ">
@@ -13,8 +13,8 @@ export default function Header() {
           </Link>
           <ul className="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
             <li>
-              <Link href={""}>
-                <a class="nav-link px-2 text-white">Criar votação</a>
+              <Link href={props.href}>
+                <a class="nav-link px-2 text-white">{props.option}</a>
               </Link>
             </li>
           </ul>

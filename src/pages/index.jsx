@@ -1,15 +1,17 @@
-import { FaPoll } from "react-icons/fa";
-import { HiChartPie } from "react-icons/hi";
-import Link from "next/link";
 import Header from "../components/Header";
 import styles from "../styles/Home.module.css";
 import Footer from "../components/Footer";
+import Poll from "../components/Poll";
+import Head from "next/head";
 
 export default function Home() {
   return (
     <>
+      <Head>
+        <title>Votações</title>
+      </Head>
       {/* Header */}
-      <Header />
+      <Header option="Criar votação" href="/poll/create" />
       <h2 className="text-center text-white">Votações ativas</h2>
       <p className="w-100 text-center text-white opacity-50">
         Para criar uma basta clicar no botão acima
@@ -21,236 +23,10 @@ export default function Home() {
           styles.main
         }`}
       >
-        <div className="row m-2 w-75">
-          <div className={styles.poll}>
-            <div className={styles.poll_photo}>
-              <div>
-                <HiChartPie fontSize={46} color={"orange"} />
-              </div>
-              <div className={styles.poll_desc}>
-                <Link className={styles.link} href={""}>
-                  <a className="text-white" href="">
-                    Grêmio Estudantil
-                  </a>
-                </Link>
-                <p className="m-0 text-white opacity-75">
-                  Criada em 2022-03-20
-                </p>
-              </div>
-            </div>
-            <div className="text-center">
-              <p className="m-0 text-white opacity-75">Votos</p>
-              <p className="m-0 text-white">12345</p>
-            </div>
-          </div>
-        </div>
-        <div className="row m-2 w-75">
-          <div className={styles.poll}>
-            <div className={styles.poll_photo}>
-              <div>
-                <HiChartPie fontSize={46} color={"orange"} />
-              </div>
-              <div className={styles.poll_desc}>
-                <Link className={styles.link} href={""}>
-                  <a className="text-white" href="">
-                    Grêmio Estudantil
-                  </a>
-                </Link>
-                <p className="m-0 text-white opacity-75">
-                  Criada em 2022-03-20
-                </p>
-              </div>
-            </div>
-            <div className="text-center">
-              <p className="m-0 text-white opacity-75">Votos</p>
-              <p className="m-0 text-white">12345</p>
-            </div>
-          </div>
-        </div>
-        <div className="row m-2 w-75">
-          <div className={styles.poll}>
-            <div className={styles.poll_photo}>
-              <div>
-                <HiChartPie fontSize={46} color={"orange"} />
-              </div>
-              <div className={styles.poll_desc}>
-                <Link className={styles.link} href={""}>
-                  <a className="text-white" href="">
-                    Grêmio Estudantil
-                  </a>
-                </Link>
-                <p className="m-0 text-white opacity-75">
-                  Criada em 2022-03-20
-                </p>
-              </div>
-            </div>
-            <div className="text-center">
-              <p className="m-0 text-white opacity-75">Votos</p>
-              <p className="m-0 text-white">12345</p>
-            </div>
-          </div>
-        </div>
-        <div className="row m-2 w-75">
-          <div className={styles.poll}>
-            <div className={styles.poll_photo}>
-              <div>
-                <HiChartPie fontSize={46} color={"orange"} />
-              </div>
-              <div className={styles.poll_desc}>
-                <Link className={styles.link} href={""}>
-                  <a className="text-white" href="">
-                    Grêmio Estudantil
-                  </a>
-                </Link>
-                <p className="m-0 text-white opacity-75">
-                  Criada em 2022-03-20
-                </p>
-              </div>
-            </div>
-            <div className="text-center">
-              <p className="m-0 text-white opacity-75">Votos</p>
-              <p className="m-0 text-white">12345</p>
-            </div>
-          </div>
-        </div>
-        <div className="row m-2 w-75">
-          <div className={styles.poll}>
-            <div className={styles.poll_photo}>
-              <div>
-                <HiChartPie fontSize={46} color={"orange"} />
-              </div>
-              <div className={styles.poll_desc}>
-                <Link className={styles.link} href={""}>
-                  <a className="text-white" href="">
-                    Grêmio Estudantil
-                  </a>
-                </Link>
-                <p className="m-0 text-white opacity-75">
-                  Criada em 2022-03-20
-                </p>
-              </div>
-            </div>
-            <div className="text-center">
-              <p className="m-0 text-white opacity-75">Votos</p>
-              <p className="m-0 text-white">12345</p>
-            </div>
-          </div>
-        </div>
-        <div className="row m-2 w-75">
-          <div className={styles.poll}>
-            <div className={styles.poll_photo}>
-              <div>
-                <HiChartPie fontSize={46} color={"orange"} />
-              </div>
-              <div className={styles.poll_desc}>
-                <Link className={styles.link} href={""}>
-                  <a className="text-white" href="">
-                    Grêmio Estudantil
-                  </a>
-                </Link>
-                <p className="m-0 text-white opacity-75">
-                  Criada em 2022-03-20
-                </p>
-              </div>
-            </div>
-            <div className="text-center">
-              <p className="m-0 text-white opacity-75">Votos</p>
-              <p className="m-0 text-white">12345</p>
-            </div>
-          </div>
-        </div>
-        <div className="row m-2 w-75">
-          <div className={styles.poll}>
-            <div className={styles.poll_photo}>
-              <div>
-                <HiChartPie fontSize={46} color={"orange"} />
-              </div>
-              <div className={styles.poll_desc}>
-                <Link className={styles.link} href={""}>
-                  <a className="text-white" href="">
-                    Grêmio Estudantil
-                  </a>
-                </Link>
-                <p className="m-0 text-white opacity-75">
-                  Criada em 2022-03-20
-                </p>
-              </div>
-            </div>
-            <div className="text-center">
-              <p className="m-0 text-white opacity-75">Votos</p>
-              <p className="m-0 text-white">12345</p>
-            </div>
-          </div>
-        </div>
-        <div className="row m-2 w-75">
-          <div className={styles.poll}>
-            <div className={styles.poll_photo}>
-              <div>
-                <HiChartPie fontSize={46} color={"orange"} />
-              </div>
-              <div className={styles.poll_desc}>
-                <Link className={styles.link} href={""}>
-                  <a className="text-white" href="">
-                    Grêmio Estudantil
-                  </a>
-                </Link>
-                <p className="m-0 text-white opacity-75">
-                  Criada em 2022-03-20
-                </p>
-              </div>
-            </div>
-            <div className="text-center">
-              <p className="m-0 text-white opacity-75">Votos</p>
-              <p className="m-0 text-white">12345</p>
-            </div>
-          </div>
-        </div>
-        <div className="row m-2 w-75">
-          <div className={styles.poll}>
-            <div className={styles.poll_photo}>
-              <div>
-                <HiChartPie fontSize={46} color={"orange"} />
-              </div>
-              <div className={styles.poll_desc}>
-                <Link className={styles.link} href={""}>
-                  <a className="text-white" href="">
-                    Grêmio Estudantil
-                  </a>
-                </Link>
-                <p className="m-0 text-white opacity-75">
-                  Criada em 2022-03-20
-                </p>
-              </div>
-            </div>
-            <div className="text-center">
-              <p className="m-0 text-white opacity-75">Votos</p>
-              <p className="m-0 text-white">12345</p>
-            </div>
-          </div>
-        </div>
-        <div className="row m-2 w-75">
-          <div className={styles.poll}>
-            <div className={styles.poll_photo}>
-              <div>
-                <HiChartPie fontSize={46} color={"orange"} />
-              </div>
-              <div className={styles.poll_desc}>
-                <Link className={styles.link} href={""}>
-                  <a className="text-white" href="">
-                    Reitor do Campus
-                  </a>
-                </Link>
-                <p className="m-0 text-white opacity-75">
-                  Criada em 2022-03-20
-                </p>
-              </div>
-            </div>
-            <div className="text-center">
-              <p className="m-0 text-white opacity-75">Votos</p>
-              <p className="m-0 text-white">12345</p>
-            </div>
-          </div>
-        </div>
+        <Poll date="10/03/2022" name="Reitor do Campus" votes={11123} />
+        <Poll date="10/03/2022" name="Reitor do Campus" votes={11123} />
+        <Poll date="10/03/2022" name="Reitor do Campus" votes={11123} />
+        <Poll date="10/03/2022" name="Reitor do Campus" votes={11123} />
       </div>
       <Footer />
     </>
