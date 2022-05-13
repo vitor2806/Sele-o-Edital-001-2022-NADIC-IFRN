@@ -1,12 +1,26 @@
 import Header from "../components/Header";
 import styles from "../styles/Home.module.css";
 import Footer from "../components/Footer";
-import Poll from "../components/Poll";
 import Head from "next/head";
-import Database from "./db/Poll";
+import { useEffect, useState } from "react";
+import Poll from "../components/Poll";
 
-export default function Home() {
-  let polls = Database.get();
+export default function Home(props) {
+  const [data, setData] = useState(null);
+  const [isLoading, setLoading] = useState(false);
+
+  useEffect(() => {
+    setLoading(true);
+    fetch("api/polls")
+      .then(res => res.json())
+      .then(data => {
+        setData(data);
+        setLoading(false);
+      });
+  }, []);
+
+  if (isLoading) return <p>Loading...</p>;
+  if (!data) return <p>No profile data</p>;
 
   return (
     <>
@@ -27,14 +41,12 @@ export default function Home() {
         }`}
       >
         {/* Pra cada elemento na array polls crie um componente Polls passando seu index e as demais propriedades */}
-        {polls.map((poll, index) => {
+        {data.polls.map((poll, index) => {
           return (
             <Poll
               name={poll.name}
-              date={poll.created_at}
               id={index}
-              expire={poll.expire}
-              votes={poll.votes}
+              expire={poll.expires_at}
               key={index}
             />
           );
