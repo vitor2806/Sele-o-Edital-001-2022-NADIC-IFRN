@@ -42,7 +42,7 @@ export default function Vote() {
           method="POST"
         >
           <p className="m-0 text-white">Opções</p>
-          <hr className="bg-light" />
+          <hr className="bg-warning" />
           {data.options.map((option, index) => {
             return (
               <div className="form-check m-2">
@@ -63,7 +63,7 @@ export default function Vote() {
               </div>
             );
           })}
-          <hr className="bg-light" />
+          <hr className="bg-warning" />
 
           <div className="d-flex flex-column text-center gap-2">
             <label className="m-0 text-white form-label" htmlFor="cpf">
@@ -82,13 +82,22 @@ export default function Vote() {
             <button className="btn bg-info">Concluir votação</button>
           </div>
         </form>
-        <div className="container bg-light">
+        <h3 className="text-center text-white mb-0">Resultados</h3>
+        <div className="container w-50 bg-light bg-opacity-10 border border-3 border-top-0 border-bottom-0 border-warning p-2 text-white">
+          <div className="m-2 d-flex justify-content-between text-muted">
+            <span>Opções</span>
+            <span>Votos</span>
+          </div>
+          <hr className="bg-warning" />
+
           {data.votes.map((vote, index) => {
             return (
-              <div className=" m-2">
-                <span>{data.options[index].name}</span>
-                <span>{vote["count(option_id)"]}</span>
-              </div>
+              <>
+                <div className="m-2 d-flex justify-content-between">
+                  <span>{data.options[index].name}</span>
+                  <span>{vote["count(option_id)"]}</span>
+                </div>
+              </>
             );
           })}
         </div>
