@@ -4,7 +4,15 @@ Esse projeto foi realizado em disposição do Edital-001-2022 do NADIC/IFRN, al�
 
 ## Como executar?
 
-Para o utilizar, basta baixar o repositório e na pasta dele utilizar um dos dois comandos:
+Para o utilizar, basta baixar o repositório e na pasta dele utilizar:
+
+```bash
+npm i # Irá baixar as dependências do projeto
+# ou
+yarn install
+```
+
+Após isso é só rodar um dos dois comandos abaixo que o projeto irá ser executado
 
 ```bash
 npm run dev
