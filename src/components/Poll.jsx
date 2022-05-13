@@ -19,10 +19,6 @@ export default function Poll(props) {
             </p>
           </div>
         </div>
-        <div className="text-center">
-          <p className="m-0 text-white opacity-75">Votos</p>
-          <p className="m-0 text-white">{props.votes}</p>
-        </div>
       </div>
     </div>
   );

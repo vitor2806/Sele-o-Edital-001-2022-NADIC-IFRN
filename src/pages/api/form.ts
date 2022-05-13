@@ -25,9 +25,7 @@ export default async function createPoll(
 
   if (req.method === "POST") {
     await db.run(`
-        INSERT INTO polls (name, created_at, expires_at) VALUES ('${
-          data.name
-        }', ${Date.now()}, '${data.expire}')
+        INSERT INTO polls (name, expires_at) VALUES ('${data.name}', '${data.expire}')
     `);
     const poll_id = await db.get(`SELECT id FROM polls ORDER BY id DESC`);
     options = options.map(element => `("${element}", ${poll_id.id})`);

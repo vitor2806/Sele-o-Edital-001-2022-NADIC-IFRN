@@ -1,17 +1,16 @@
 import Header from "../components/Header";
-import styles from "../styles/Home.module.css";
 import Footer from "../components/Footer";
 import Head from "next/head";
 import { useEffect, useState } from "react";
 import Poll from "../components/Poll";
 
-export default function Home(props) {
+export default function Home() {
   const [data, setData] = useState(null);
   const [isLoading, setLoading] = useState(false);
 
   useEffect(() => {
     setLoading(true);
-    fetch("api/polls")
+    fetch("api/polllist")
       .then(res => res.json())
       .then(data => {
         setData(data);
@@ -19,9 +18,8 @@ export default function Home(props) {
       });
   }, []);
 
-  if (isLoading) return <p>Loading...</p>;
-  if (!data) return <p>No profile data</p>;
-
+  if (isLoading) return <p>Carregando...</p>;
+  if (!data) return <p>Sem dados</p>;
   return (
     <>
       <Head>
@@ -36,18 +34,18 @@ export default function Home(props) {
 
       {/* Polls */}
       <div
-        className={`${"container w-50 h-100 justify-content-start align-items-center rounded border border-start-0 border-end-0 border-3 border-info mt-3 mb-4 p-5 flex-column"} ${
-          styles.main
-        }`}
+        className={
+          "container w-50 h-100 justify-content-start align-items-center rounded border border-start-0 border-end-0 border-3 border-info mt-3 mb-4 p-5 flex-column main"
+        }
       >
         {/* Pra cada elemento na array polls crie um componente Polls passando seu index e as demais propriedades */}
         {data.polls.map((poll, index) => {
           return (
             <Poll
               name={poll.name}
-              id={index}
+              id={index + 1}
               expire={poll.expires_at}
-              key={index}
+              key={index + 1}
             />
           );
         })}
